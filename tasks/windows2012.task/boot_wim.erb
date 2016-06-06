@@ -24,3 +24,13 @@ echo ======================================================================
 imgstat
 echo now booting WinPE client
 boot
+
+
+# Use these for EFI based boot
+#initrd ${base}/efi/boot/bootx64.efi
+#initrd ${base}/efi/microsoft/boot/bcd
+#initrd ${base}/efi/microsoft/boot/fonts/segmono_boot.ttf
+#initrd ${base}/efi/microsoft/boot/fonts/segoe_slboot.ttf
+#initrd ${base}/efi/microsoft/boot/fonts/wgl4_boot.ttf
+#initrd ${base}/boot/boot.sdi
+#initrd --name boot.wim <%= File.exists?(repo_file('razor-winpe.wim').to_s) ? repo_url('razor-winpe.wim') : '${base}/sources/boot.wim' %>  boot.wim
